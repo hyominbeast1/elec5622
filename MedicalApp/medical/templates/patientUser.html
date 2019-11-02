@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>病人页面</title>
+	<title>Patient Page</title>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
     <style>
 		body{
@@ -44,11 +44,11 @@
         <div class="row" style="padding-top: 20px;padding-bottom: 20px; background-color: #eee;">
 			<div class="col-md-10">
 				<header id="header" class="">
-					<h2>病人信息管理</h2>
+					<h2>Patient Information Management</h2>
 				</header>
 			</div>
 			<div class="col-md-2">
-				<p id="userName">欢迎您, {{ username }}</p>
+				<p id="userName">Welcome, {{ username }}</p>
                 <a href="/login/" >LogOut</a>
 
 		</div>
@@ -87,7 +87,7 @@
         // 指定图表的配置项和数据
         var optionHeart = {
         	title: {
-        		text: '心率'
+        		text: 'BPM'
         	},
         	tooltip: {
         		trigger: 'axis'
@@ -119,7 +119,7 @@
             }
         },
         series: {
-        	name: '心率',
+        	name: 'BPM',
         	type: 'line',
         	data: data.map(function (item) {
         		return item[0];
@@ -135,28 +135,28 @@
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最大值'
+        					formatter: 'Maximum'
         				}
         			},
         			type: 'max',
-        			name: '最高点'
+        			name: 'peak'
         		},{
         			symbol: 'circle',
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最小值'
+        					formatter: 'Minimum'
         				}
         			},
         			type: 'min',
-        			name: '最高点'
+        			name: 'peak'
         		}]
         	}
         }
     }
         var optionOxy = {
         	title: {
-        		text: '血氧'
+        		text: 'SPO2'
         	},
         	tooltip: {
         		trigger: 'axis'
@@ -188,7 +188,7 @@
             }
         },
         series: {
-        	name: '血氧',
+        	name: 'SPO2',
         	type: 'line',
         	data: data.map(function (item) {
         		return item[3];
@@ -204,21 +204,21 @@
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最大值'
+        					formatter: 'Maximum'
         				}
         			},
         			type: 'max',
-        			name: '最高点'
+        			name: 'peak'
         		},{
         			symbol: 'circle',
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最小值'
+        					formatter: 'Minimum'
         				}
         			},
         			type: 'min',
-        			name: '最高点'
+        			name: 'peak'
         		}]
         	}
         }
@@ -232,7 +232,7 @@
         //舒张压
         diastolicBloodPressureCharts.setOption(option = {
         	title: {
-        		text: '舒张压'
+        		text: 'diastolic pressure'
         	},
         	tooltip: {
         		trigger: 'axis'
@@ -264,7 +264,7 @@
             }
         },
         series: {
-        	name: '舒张压',
+        	name: 'diastolic pressure',
         	type: 'line',
         	data: data.map(function (item) {
         		return item[2];
@@ -280,21 +280,21 @@
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最大值'
+        					formatter: 'Maximum'
         				}
         			},
         			type: 'max',
-        			name: '最高点'
+        			name: 'peak'
         		},{
         			symbol: 'circle',
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最小值'
+        					formatter: 'Minimum'
         				}
         			},
         			type: 'min',
-        			name: '最高点'
+        			name: 'peak'
         		}]
         	}
         }
@@ -302,7 +302,7 @@
         //收缩压
         systolicBloodPressureCharts.setOption(option = {
         	title: {
-        		text: '收缩压'
+        		text: 'systolic pressure'
         	},
         	tooltip: {
         		trigger: 'axis'
@@ -335,7 +335,7 @@
             }
         },
         series: {
-        	name: '收缩压',
+        	name: 'systolic pressure',
         	type: 'line',
         	data: data.map(function (item) {
         		return item[1];
@@ -351,21 +351,21 @@
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最大值'
+        					formatter: 'Maximum'
         				}
         			},
         			type: 'max',
-        			name: '最高点'
+        			name: 'peak'
         		},{
         			symbol: 'circle',
         			label: {
         				normal: {
         					position: 'end',
-        					formatter: '最小值'
+        					formatter: 'Minimum'
         				}
         			},
         			type: 'min',
-        			name: '最高点'
+        			name: 'peak'
         		}]
         	}
         }

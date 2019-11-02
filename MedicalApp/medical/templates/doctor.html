@@ -48,11 +48,11 @@
         <div class="row" style="padding-top: 20px;padding-bottom: 20px; background-color: #eee;">
             <div class="col-md-9">
                 <header id="header" class="">
-                    <h2>病人信息管理</h2>
+                    <h2>Patient Information management</h2>
                 </header>
             </div>
             <div class="col-md-3">
-                <p id="userName">欢迎您, {{ username }}医生</p>
+                <p id="userName">Welcome, Dr.{{ username }}</p>
                 <a href="/login/" >LogOut</a>
             </div>
         </div>
@@ -60,8 +60,8 @@
             <div class="col-md-3 Cir_box_1">
                 <form>
                       <div class="form-group text-center">
-                        <h3 for="exampleInputEmail1">查询病人信息</h3>
-                        <input type="name" class="form-control" id="patientName" aria-describedby="patientName" placeholder="病人姓名">
+                        <h4 for="exampleInputEmail1">Search Patient</h4>
+                        <input type="name" class="form-control" id="patientName" aria-describedby="patientName" placeholder="Patient Name">
                       </div>
                 </form>
                 <div id="namelist" style="height: 330px;overflow: scroll">
@@ -76,10 +76,10 @@
             <div class="col-md-9 Cir_box_2">
                 <div class="inside_box" style="overflow: scroll; height: 430px">
                 <div class="text-center" >
-                    <h2>病人综合数据分析</h2>
+                    <h2>Patient comprehensive data analysis</h2>
                 </div>
                 <div id="1" style="padding-top: 10px; padding-bottom: 10px;">
-                    <h3 class="text-center">近一个月男女心率分布</h3>
+                    <h3 class="text-center">BPM distribution monthly classified by gender</h3>
                     <div id="heartRateCharts" style="width: 600px;height:600px; margin:0 auto;">
                     </div>
                 </div>
@@ -88,11 +88,11 @@
                     <div id="diastolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
                 </div>	 -->
                 <div id="2" style="padding-top: 10px; padding-bottom: 10px;">
-                    <h3 class="text-center">近一个月男女血压平均值</h3>
+                    <h3 class="text-center">Blood pressure distribution monthly classified by gender</h3>
                     <div id="systolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
                 </div>
                 <div id="3" style="padding-top: 10px; padding-bottom: 10px;">
-                    <h3 class="text-center">近一个月男女血氧平均值</h3>
+                    <h3 class="text-center">SPO2 distribution monthly classified by gender</h3>
                     <div id="bloodOxygenationCharts" style="width: 600px;height:610px; margin:0 auto; padding-bottom: 20px;"></div>
                 </div>
                 </div>
@@ -123,7 +123,7 @@
 		        }
 		    },
 		    legend: {
-		        data:['男','女']
+		        data:['male','female']
 		    },
 		    grid: {
 		        left: '3%',
@@ -134,7 +134,7 @@
 		    xAxis : [
 		        {
 		            type : 'category',
-		            data : ['收缩压','舒张压']
+		            data : ['systolic','diastolic']
 		        }
 		    ],
 		    yAxis : [
@@ -144,13 +144,13 @@
 		    ],
 		    series : [
 		        {
-		            name:'男',
+		            name:'male',
 		            type:'bar',
 		            data:[dataPressure["male"]["systolicBloodPressure"],
                         dataPressure["male"]["diastolicBloodPressure"] ]
 		        },
 		        {
-		            name:'女',
+		            name:'female',
 		            type:'bar',
 		            data:[dataPressure["female"]["systolicBloodPressure"],
                         dataPressure["female"]["diastolicBloodPressure"] ]
@@ -161,7 +161,7 @@
 
 		optionRate = {
 		    title : {
-		        text: '心率分布图',
+		        text: 'BPM distribution',
 		        subtext: '',
 		        x:'center'
 		    },
@@ -190,7 +190,7 @@
 		    calculable : true,
 		    series : [
 		        {
-		            name:'男性心率',
+		            name:'Male BPM',
 		            type:'pie',
 		            radius : [20, 110],
 		            center : ['50%', '25%'],
@@ -206,7 +206,7 @@
 		        },
 		        ,
 		        {
-		            name:'女性心率',
+		            name:'Female BPM',
 		            type:'pie',
 		            radius : [20, 110],
 		            center : ['50%', '75%'],
@@ -226,7 +226,7 @@
 
 		optionOxy = {
 		    title : {
-		        text: '血氧分布图',
+		        text: 'SPO2 distribution',
 		        subtext: '',
 		        x:'center'
 		    },
@@ -255,7 +255,7 @@
 		    calculable : true,
 		    series : [
 		        {
-		            name:'男性心血',
+		            name:'Male SPO2',
 		            type:'pie',
 		            radius : [20, 110],
 		            center : ['50%', '25%'],
@@ -268,7 +268,7 @@
 		        },
 		        ,
 		        {
-		            name:'女性心血',
+		            name:'Female SPO2',
 		            type:'pie',
 		            radius : [20, 110],
 		            center : ['50%', '75%'],
