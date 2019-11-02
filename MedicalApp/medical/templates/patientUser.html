@@ -6,10 +6,42 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>病人页面</title>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <style>
+		body{
+			background-image: url( "{% static "assets/homeshow.HEIC" %}");
+			background-color: #cccccc;
+			height: 500px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+            padding: auto;
+		}
+        ::-webkit-scrollbar{
+            display: none;
+
+        }
+        .Cir_box_1{
+                    width: auto;
+                    z-index:10;
+                    background: rgba(0, 0, 0, 0.7);
+                    height: auto;
+                    border-radius: 30px 30px 30px 30px;
+                    padding: 20px;
+
+                    }
+               .inside_box{
+                        margin: 5px 5px;
+                        padding: 5px 5px;
+                        background: #fff1ef;
+                        position: relative;
+                        }
+    </style>
 </head>
 <body>
 	<div class="container">
-		<div class="row" style="padding-top: 20px;padding-bottom: 20px; background-color: #eee;">
+
+        <div class="row" style="padding-top: 20px;padding-bottom: 20px; background-color: #eee;">
 			<div class="col-md-10">
 				<header id="header" class="">
 					<h2>病人信息管理</h2>
@@ -17,21 +49,27 @@
 			</div>
 			<div class="col-md-2">
 				<p id="userName">欢迎您, {{ username }}</p>
-			</div>
+                <a href="/login/" >LogOut</a>
+
 		</div>
-		<div class="row">
-			<div id="heartRateCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
-		</div>
-		<div class="row">
-			<div id="diastolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
-		</div>
-		<div class="row">
-			<div id="systolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
-		</div>
-		<div class="row">
-			<div id="bloodOxygenationCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
-		</div>
-	</div>
+        </div>
+            <div class="Cir_box_1">
+                <div class="inside_box" style="overflow: scroll;height: 500px">
+		            <div class="row">
+			            <div id="heartRateCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
+		            </div>
+		            <div class="row">
+                        <div id="diastolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
+		            </div>
+		            <div class="row">
+			        <div id="systolicBloodPressureCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
+		            </div>
+		            <div class="row">
+			        <div id="bloodOxygenationCharts" style="width: 600px;height:400px; margin:0 auto; padding-bottom: 20px;"></div>
+		            </div>
+                </div>
+             </div>
+	    </div>
 	<script src="{% static 'jquery-3.3.1.slim.min.js' %}" type="text/javascript" charset="utf-8"></script>
 	<script src="{% static 'popper.min.js' %}" type="text/javascript" charset="utf-8"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript" charset="utf-8"></script>

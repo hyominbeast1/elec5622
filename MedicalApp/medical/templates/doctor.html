@@ -4,8 +4,44 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>医生页面</title>
+	<title>Docter Page</title>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+	<style>
+		body{
+			background-image: url( "{% static "assets/homeshow.HEIC" %}");
+			background-color: #cccccc;
+			height: 500px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+            padding: auto;
+		}
+		::-webkit-scrollbar { 
+		display: none; 
+		}
+        .Cir_box_1{
+                    width:28%;
+                    height: auto;
+                    z-index:10;
+                    background: rgba(0, 0, 0, 0.7);
+                    border-radius: 5px 5px 5px 5px;
+                    }
+        .Cir_box_2{
+                    width:43%;
+                    height: auto;
+                    z-index:10;
+                    background: rgba(0, 0, 0, 0.7);
+                    float:right;
+                    border-radius: 5px 5px 5px 5px;
+                    }
+        .inside_box{
+            margin:  10px 1px;
+            padding: 10px 10px;
+            background: #fff1ef;
+            position: relative;
+        }
+	</style>
 </head>
 <body>
     <div class="container">
@@ -17,25 +53,28 @@
             </div>
             <div class="col-md-3">
                 <p id="userName">欢迎您, {{ username }}医生</p>
+                <a href="/login/" >LogOut</a>
             </div>
         </div>
-        <div class="row" style="padding-top: 30px;">
-            <div class="col-md-3">
+        <div class="row" style="padding-top: 30px; overflow:scroll; height: 480px;">
+            <div class="col-md-3 Cir_box_1">
                 <form>
                       <div class="form-group text-center">
                         <h3 for="exampleInputEmail1">查询病人信息</h3>
                         <input type="name" class="form-control" id="patientName" aria-describedby="patientName" placeholder="病人姓名">
                       </div>
                 </form>
-                <div id="namelist" style="height: 400px;overflow: scroll;">
+                <div id="namelist" style="height: 330px;overflow: scroll">
                     <div class="list-group">
                         {% for patient in patients  %}
                             <a href="/patientUser/{{ patient.username }}" class="list-group-item list-group-item-action">{{ patient.username }}</a>
                         {% endfor %}
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 Cir_box_2">
+                <div class="inside_box" style="overflow: scroll; height: 430px">
                 <div class="text-center" >
                     <h2>病人综合数据分析</h2>
                 </div>
@@ -55,6 +94,7 @@
                 <div id="3" style="padding-top: 10px; padding-bottom: 10px;">
                     <h3 class="text-center">近一个月男女血氧平均值</h3>
                     <div id="bloodOxygenationCharts" style="width: 600px;height:610px; margin:0 auto; padding-bottom: 20px;"></div>
+                </div>
                 </div>
             </div>
         </div>
